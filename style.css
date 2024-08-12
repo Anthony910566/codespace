@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    font-size: 1.5rem;
+    background: url(images/compass-g146ef9596_640.jpg);
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    height: 90px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+#navbar-logo{
+    display: flex;
+    background-color: blue;
+    background-image: linear-gradient(to right, rgba(233, 241, 17, 0.963) 50%, rgb(18, 213, 231) 50%);
+    background-size: 100%;
+    align-items: center;
+    font-size: 3rem;
+    text-decoration: none;
+    cursor: pointer;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.fa-brands fa-sketch{
+    margin-right: 0.5rem;
+}
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+}
+.navbar-items{
+    height: px;
+}
+.navbar-links{
+    color: rgb(18, 213, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 1.5rem;
+    height: 100%;
+
+}
+.navbar-button{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    height: 60%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: aqua;
+    
+
+
+}
+.navbar-btn{ 
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-content: center;
+    padding: 0.1rem;
+    width: 100%;
+    color: #e6df05;
+}
+.navbar-button:hover{
+    background: #e6053a;
+    transition: all 0.3s ease;
+}
+.navbar-links:hover{
+    color: #e6053a;
+    transition: all 0.3s ease;
+}
