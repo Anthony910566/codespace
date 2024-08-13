@@ -90,6 +90,7 @@
 @media screen and (max-width:760px){
     .navbar-container{
         display: flex;
+    
         justify-content: space-between;
         height: 80px;
         width: 100%;
@@ -123,32 +124,32 @@
         margin: 0;
         width: 100%;
         position: absolute;
-        /*top: -1000px;
-        opacity: 0;*/
+        top: -1000px;
+        opacity: 0;
         transition: all 0.5s ease;
         height: 50vh;
         z-index: 1;
         
     }
     .navbar-menu.active{
-        top: 100%;
+        top: 2%;
         opacity: 1;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         z-index: 99;
-        height: 30vh;
+        height: 50vh;
         font-size: 1.6rem;
 
     }
     .navbar-toggle .bar{
-        top: 30px;
         display: block;
         cursor: pointer;
         width: 25px;
         height: 3px;
-        margin: 5px 10px;
+        margin: 5px auto;
         position: relative;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
         background: #e6e205;
+        
     
     }
     .navbar-button{
@@ -159,19 +160,19 @@
         width: 100%;
         height: 40px;
     }
-    #mobile-menu{
+    #mobilemenu{
         position: absolute;
-        top: 25%;
+        top: 7%;
         right: 5%;
-        transform: translate(5%, 20%);
+        transform: translate(0%, -50%);
     }
 }
-#mobile-menu.is-active .bar :nth-child(1){
+#mobilemenu.is-active .bar:nth-child(1){
     transform: translateY(8px) rotate(45deg);
 }
-#mobile-menu.is-active .bar :nth-child(2){
+#mobilemenu.is-active .bar:nth-child(2){
     opacity: 0;
 }
-#mobile-menu.is-active .bar :nth-child(3){
+#mobilemenu.is-active .bar:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
 }
