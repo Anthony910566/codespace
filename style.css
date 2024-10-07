@@ -11,6 +11,8 @@
     height: 90px;
     font-size: 1.5rem;
     background: url(images/compass-g146ef9596_640.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .navbar-container{
     display: flex;
