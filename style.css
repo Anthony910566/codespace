@@ -1,8 +1,14 @@
+.bokor-regular {
+    font-family: "Bokor", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 *{
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: "Bokor", system-ui;
 }
 .navbar{
     display: flex;
@@ -10,7 +16,7 @@
     justify-content: center;
     height: 90px;
     font-size: 1.5rem;
-    background: url(images/compass-g146ef9596_640.jpg);
+    background: black;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -26,7 +32,7 @@
 #navbar-logo{
     display: flex;
     background-color: blue;
-    background-image: linear-gradient(to right, rgba(233, 241, 17, 0.963) 50%, rgb(18, 213, 231) 50%);
+    background-image: linear-gradient(to right, #c3b70e 50%, rgb(96, 59, 209) 50%);
     background-size: 100%;
     align-items: center;
     font-size: 3rem;
@@ -49,7 +55,7 @@
     height: px;
 }
 .navbar-links{
-    color: rgb(18, 213, 231);
+    color: rgb 96, 59, 209;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +73,7 @@
     border: none;
     outline: none;
     border-radius: 30px;
-    background: aqua;
+    background: #5e38e7;
     
 
 
@@ -89,10 +95,9 @@
     color: #e6053a;
     transition: all 0.3s ease;
 }
-@media screen and (max-width:760px){
+@media screen and (max-width:560px){
     .navbar-container{
         display: flex;
-    
         justify-content: space-between;
         height: 80px;
         width: 100%;
@@ -178,3 +183,49 @@
 #mobilemenu.is-active .bar:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
 }
+
+main{
+    background-color:#c3b70e;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 550px;
+    background-color:#c3b70e;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main-content h2{
+
+    font-size: 4rem;
+    background-color: #5e38e7;
+    margin-bottom: 20px;
+    background-size: 100%;
+    background-image: linear-gradient(to right, #2e2d16 50%, rgb(96, 59, 209) 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.main-paragraph{
+    font-size: 2rem;
+    font-weight: 600;
+    padding-left: 10%;
+}
+.main-content p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.img-container{
+    margin-left: 30%;
+    height: 90%;
+}
+
+
