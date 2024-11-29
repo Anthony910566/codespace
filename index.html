@@ -48,18 +48,28 @@
             </div>
             <ul class="navbar-menu">
                 <li class="navbar-items">
-                    <a href="/" class="navbar-links">Home</a>
+                    <a href="/pages/home.html" class="navbar-links">Home</a>
                 </li>
                 <li class="navbar-items">
-                    <a href="/" class="navbar-links">Tech</a>
+                    <a href="/pages/tech.html" class="navbar-links">Tech</a>
                 </li>
                 <li class="navbar-items">
-                    <a href="/" class="navbar-links">Services</a>
+                    <a href="/pages/services.html" class="navbar-links">Services</a>
                 </li>
                 <li class="navbar-button">
-                    <a href="/" class="navbar-btn">Sign Up</a>
+                    <a href="/" id="navbarBtn">Sign Up</a>
                 </li>
             </ul>
+        </div>
+        <div id="signinForm">
+            <h2>Sign In</h2>
+            <form>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </nav>
     <!-- hero section-->
