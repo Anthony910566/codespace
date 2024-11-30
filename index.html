@@ -14,9 +14,6 @@
         <!-- linking external css file for styling the webpage-->
     <link rel="stylesheet" href="style.css">
 
-    <!--importing the kumbh sans font from google fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Kumbh+Sans:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Poppins&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <!--linking tp font awesome library fro using icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -36,42 +33,11 @@
     <script src="function.js" defer></script>
 
 </head>
-<body >
-    <!--navigation bar-->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="/" id="navbar-logo"><i class="fa-brands fa-sketch"></i>CoDeTeCh</a>
-            <div class="navbar-toggle" id="mobilemenu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar-menu">
-                <li class="navbar-items">
-                    <a href="/pages/home.html" class="navbar-links">Home</a>
-                </li>
-                <li class="navbar-items">
-                    <a href="/pages/tech.html" class="navbar-links">Tech</a>
-                </li>
-                <li class="navbar-items">
-                    <a href="/pages/services.html" class="navbar-links">Services</a>
-                </li>
-                <li class="navbar-button">
-                    <a href="/" id="navbarBtn">Sign Up</a>
-                </li>
-            </ul>
-        </div>
-        <div id="signinForm">
-            <h2>Sign In</h2>
-            <form>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </nav>
+<body onload="loadHTML()">
+
+        <!-- Navbar -->
+        <div id="navbar"></div>
+ 
     <!-- hero section-->
     <main>
         <div class="main-container">
@@ -151,5 +117,8 @@
         </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
 </body>
 </html>
