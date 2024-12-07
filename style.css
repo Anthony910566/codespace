@@ -8,21 +8,32 @@
     margin: 0;
     padding: 0;
     font-family: "Saira Condensed", sans-serif;
+   
 }
+
+body{
+    margin-top: 20px  ;
+    background-color: #c3b70e ;
+}
+
 .navbar{
-    position: sticky !important;  
-    top: 0 !important;             
+    
+    background-color:  #c3b70e ;
     z-index: 1000;      
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90px;
     font-size: 1.5rem;
-    background: black;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 .navbar-container{
+    
+    border-radius: 50px;
+    position: fixed;
+    top: 3;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -57,7 +68,7 @@
     height: px;
 }
 .navbar-links{
-    color: rgb 96, 59, 209;
+    color: #c3b70e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,11 +117,12 @@
     
 }
 .navbar-button:hover{
+   
     background: #e6053a;
     transition: all 0.3s ease;
 }
 .navbar-links:hover{
-    color: #e6053a;
+    color: rgb(235, 23, 23);
     transition: all 0.3s ease;
 }
 @media screen and (max-width:560px){
@@ -274,20 +286,20 @@ main{
     .img-container{
        margin: 50px;
     }
-
-
 }
+
+/* second section layout with a form*/
+
 section{
+    background-color: #fff;
     border: 5px solid #5e38e7;
-    
-  
 }
 .section-container{
-    height: 90vh;
+    height: auto;
     display: grid;
     justify-content: center;
     font-size: 3rem;
-    text-align: center;
+    text-align:center;
     width: 100%;
     max-width: 1300px;
 }
@@ -296,68 +308,124 @@ section{
     margin-bottom: 30px;
 }
 .form-container{
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"] {
+    padding: 10px; 
+    margin-bottom: 5px; 
+    border: 2px solid #180808; 
+    border-radius: 5px; 
+    font-size: 6px; 
+    width: 100%; 
 }
 
 .btn{
-    color:#e6df05;
-    background-color: #5e38e7;
+    display: inline-block;
+    margin-bottom: 20px ;
+    font-size: 1.5rem;
+    color:#5e38e7;
     padding: 5px 10px;
-    height: 80%;
-    width: 20%;
-   
+    height: 40px;
+    width: 120px;
+    
 }
+
+/*3rd Image gallery*/
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 6rem;
     justify-content: center;
 }
 .gallery-container {
     
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
+    
 }
 
-.gallery img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
+.img-container1 {
 
-.img-container1{
-    text-align: center;
-    justify-content: space-between;
-    align-items: center ;
-    width: 100%;
-    max-width: 2000px;
-    margin: 50px;
+    margin-top: 20px;
     display: flex;
+    gap: 10rem;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+.img-item {
+    border-radius: 10%;
+    border: 5px solid ;
+    text-align: center; /* Center-align text and image */
+}
+
+.img-item img {
+    border-radius: 10%;
+    width: 250px; /* Set a uniform size for the images */
+    height: 250px;
+    object-fit: cover;
+}
+
+.img-item p {
+    font-weight: 700;
+    margin-left: 20px;
+    width: 200px;
+    margin-top: 0px; /* Add spacing between the image and the paragraph */
+    font-size: 14px; /* Adjust font size as needed */
+    color: black;
 }
 
 .img-container2{
-    
-    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10rem;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+/* 4th layout*/
+
+.purpose-container{
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
-    max-width: 2000px;
-    margin-bottom: 20px;
+    max-width: auto;
+    font-size: 2rem;
+    height: 90vh;
+    
+}
+.purpose{
+    text-align: center;
+    margin: 50px;
+    
+}
+.purpose h1{
+    margin: 50px;
+    text-align:center;
+}
+.purpose p{
+    text-align:justify;
+}
+.pose-btn{
+    margin: 50px;
+    font-size: 15px;
+    width: 150px;
+    height: 50px; 
+}
+.pose-btn:hover{
+    font-weight: 700;
+    background-color: #c3b70e;
 }
 
-.img-container1 p{
-    background-color: white;
-}
 
-.img-container2 p{
-    background-color: #fff;
-}
-
-/****    footer****/
+/**** footer ****/
 
 .footer-container{
     font-size: 1.5rem;
