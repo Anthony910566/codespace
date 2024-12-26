@@ -1,14 +1,3 @@
-const menu = document.querySelector("#mobilemenu");
-
-const menuLinks = document.querySelector(".navbar-menu");
-
-menu.addEventListener('click', function(){
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-});
-
-
-
 function loadHTML() {
     // Load Navbar
     fetch('navbar.html') // Reference the navbar file in the same directory
@@ -23,6 +12,9 @@ function loadHTML() {
 
             // Initialize Sign-Up functionality after navbar is loaded
             initSignup();
+
+            // Initialize Mobile Menu after navbar is loaded
+            initMobileMenu();
         })
         .catch(error => {
             console.error('Error loading navbar:', error);
@@ -46,26 +38,66 @@ function loadHTML() {
 
 // Sign-Up Form Functionality
 function initSignup() {
-    const signinBtn = document.getElementById('navbarBtn'); // Button to open the form
-    const signinForm = document.getElementById('signinForm'); // The form to show/hide
+    // Use querySelectorAll to get all buttons with the class 'navbarBtn'
+    const signinBtns = document.querySelectorAll('#navbarBtn'); // Notice the '.' for class selector
+    const signinForm = document.getElementById('signinForm'); // Get the form by ID
 
-    if (signinBtn && signinForm) {
-        // Show the form when the button is clicked
-        signinBtn.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default anchor behavior
-            signinForm.style.display = 'block'; // Show the form
+    if (signinBtns.length > 0 && signinForm) {
+        // Loop through all buttons and add event listeners
+        signinBtns.forEach(signinBtn => {
+            signinBtn.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default button behavior
+                signinForm.style.display = 'block'; // Show the form
+            });
         });
 
         // Close the form when clicking outside of it
         document.addEventListener('click', (event) => {
-            if (!signinForm.contains(event.target) && event.target !== signinBtn) {
+            // Check if the click is outside the form and any button
+            const clickedOutside = !signinForm.contains(event.target) && 
+                ![...signinBtns].some(btn => btn.contains(event.target));
+
+            if (clickedOutside) {
                 signinForm.style.display = 'none'; // Hide the form
             }
         });
     } else {
-        console.warn('Sign-in button or form not found after loading navbar!');
+        console.warn('Sign-in button(s) or form not found after loading navbar!');
     }
 }
 
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const menu = document.querySelector("#mobilemenu");
+    const menuLinks = document.querySelector(".navbar-menu");
+
+    if (menu && menuLinks) {
+        // Toggle the menu open/close on menu button click
+        menu.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the event from bubbling to the document
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+
+        // Close the menu when clicking anywhere else on the page
+        document.addEventListener('click', (event) => {
+            if (menuLinks.classList.contains('active') && !menuLinks.contains(event.target) && event.target !== menu) {
+                menu.classList.remove('is-active');
+                menuLinks.classList.remove('active');
+            }
+        });
+    } else {
+        console.error("Menu or Menu Links element not found!");
+    }
+}
 // Call the loadHTML function on page load
-document.addEventListener('DOMContentLoaded', loadHTML);
+document.addEventListener('DOMContentLoaded', () => {
+    if (!document.getElementById("navbar")) {
+        console.warn("Navbar container not found in the main HTML!");
+    }
+    if (!document.getElementById("footer")) {
+        console.warn("Footer container not found in the main HTML!");
+    }
+    loadHTML();
+});
