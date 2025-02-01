@@ -36,6 +36,33 @@ function loadHTML() {
         });
 }
 
+
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const menu = document.querySelector("#mobilemenu");
+    const menuLinks = document.querySelector(".navbar-menu");
+
+    if (menu && menuLinks) {
+        // Toggle the menu open/close on menu button click
+        menu.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent the event from bubbling to the document
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+
+        // Close the menu when clicking anywhere else on the page
+        document.addEventListener('click', (event) => {
+            if (menuLinks.classList.contains('active') && !menuLinks.contains(event.target) && event.target !== menu) {
+                menu.classList.remove('is-active');
+                menuLinks.classList.remove('active');
+            }
+        });
+    } else {
+        console.error("Menu or Menu Links element not found!");
+    }
+}
+
 // Sign-Up Form Functionality
 function initSignup() {
     // Use querySelectorAll to get all buttons with the class 'navbarBtn'
@@ -66,31 +93,6 @@ function initSignup() {
     }
 }
 
-
-// Mobile Menu Functionality
-function initMobileMenu() {
-    const menu = document.querySelector("#mobilemenu");
-    const menuLinks = document.querySelector(".navbar-menu");
-
-    if (menu && menuLinks) {
-        // Toggle the menu open/close on menu button click
-        menu.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent the event from bubbling to the document
-            menu.classList.toggle('is-active');
-            menuLinks.classList.toggle('active');
-        });
-
-        // Close the menu when clicking anywhere else on the page
-        document.addEventListener('click', (event) => {
-            if (menuLinks.classList.contains('active') && !menuLinks.contains(event.target) && event.target !== menu) {
-                menu.classList.remove('is-active');
-                menuLinks.classList.remove('active');
-            }
-        });
-    } else {
-        console.error("Menu or Menu Links element not found!");
-    }
-}
 // Call the loadHTML function on page load
 document.addEventListener('DOMContentLoaded', () => {
     if (!document.getElementById("navbar")) {
